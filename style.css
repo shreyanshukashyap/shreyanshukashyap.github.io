@@ -339,12 +339,12 @@ input {
 
 @media (max-width: 992px) {
 
-  #video1,
+/*   #video1,
   #video2,
   #video3 {
     visibility: hidden;
     opacity: 0;
-  }
+  } */
 
   .popup h2 {
     font-size: 40px;
