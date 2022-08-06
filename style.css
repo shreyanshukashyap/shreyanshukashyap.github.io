@@ -468,7 +468,6 @@ input {
   }
   #video{
     position: centre;
-    display: inline-block;
     text-align: center;
   }
   .button {
