@@ -357,7 +357,7 @@ input {
   input {
     margin-bottom: 6%;
     padding: 8px 20px;
-    opacity: 0.3;
+    opacity: 1;
   }
 
   .name,
@@ -462,7 +462,7 @@ input {
   input {
     margin-bottom: 6%;
     padding: 8px 20px;
-    opacity: 0.3;
+    opacity: 1;
   }
 
   .name,
