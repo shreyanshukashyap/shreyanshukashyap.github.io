@@ -58,7 +58,7 @@
 
             <div>
                 <div class="box">
-                    <input type="submit"></input>
+                    <input type="submit" value="submit" ></input>
                     <a class="button" href="#popup1" type="submit">Submit</a>
                 </div>
             </div>
@@ -75,22 +75,13 @@
         </div>
     </div>
     <script>
-        function validateForm() {
-            let x = document.forms["myForm"]["fname"].value;
-            if (x == "") {
-                alert("Name must be filled out");
-                return false;
-            }
-        }
-    </script>
-    <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwGKT6qXY6IAFG-H0FW7hQz9AMMkKwuYq0p-Anpi8Fr_69RxgtBCyrHQUcaxzXp4iLMdQ/exec'
         const form = document.forms['google-sheet']
 
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => window.location.href = "/submit")
+                .then(response =>alert("Thank you for your response, We'll contact you soon !"))
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
