@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.get("/", function (req, res) {
-    res.render("../index");
+    res.render("index");
 })
 app.get("/recruit", function (req, res) {
-    res.render("../Form");
+    res.render("Form");
 });
 
 app.listen(3000, function () {
