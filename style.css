@@ -338,6 +338,9 @@ input {
     width: 300px;
   }
 
+  .yt{
+    margin-left: 164px;
+  }
   .popup h2 {
     font-size: 40px;
   }
@@ -416,6 +419,10 @@ input {
     font-size: 10px;
   }
 
+  .yt{
+     margin-left: 112px;
+  }
+  
   #pcontent {
     margin-left: 10px;
     margin-top: -50px;
