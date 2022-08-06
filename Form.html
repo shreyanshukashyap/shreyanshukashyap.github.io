@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Slabo+27px&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>NOX Registration Form</title>
+</head>
+
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="/video/video1.mp4" type="video/mp4">
+    </video>
+
+    <div id="img">
+        <img src="/image/glow_logo.png" />
+    </div>
+
+    <h1 id="form-heading">Registration Form</h1>
+
+    <div id="intro">
+        <form name="myForm" action="/" method="post" name="google-sheet">
+            <div class="name">
+                <label for="Full Name">Full Name</label>
+                <input type="text" id="name" name="name" data-validate="Name is required" required />
+            </div>
+
+            <div class="rollno">
+                <label for="Year of graduation">Year of graduation</label>
+                <input type="text" id="year" name="roll" required />
+            </div>
+
+            <div class="branch">
+                <label for="Branch">Course</label>
+                <input type="text" id="Branch" name="Branch" required />
+            </div>
+
+            <div class="phno">
+                <label for="Phone No.">Phone Number</label>
+                <input type="text" id="Phone No." name="phone" required />
+            </div>
+
+            <div class="city">
+                <label for="City">Email</label>
+                <input type="text" id="City" name="city" required />
+            </div>
+
+            <div class="city">
+                <label for="question1">Why do you wish to attend this workshop ?</label>
+                <input type="text" id="City" name="question1" required />
+            </div>
+
+            <div>
+                <div class="box">
+                    <a class="button" href="#popup1" type="submit">Submit</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2 class="heading" text-align: center;>Thank you for Registering</h2>
+            <a class="close" href="/">&times;</a>
+            <div class="content" id="pcontent">
+                <p>We've got your response , see you soon :)</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzPuE0AnVtPf7MsgxLmO09A1Mz4OD1CfxkiEN581_HSYAxgR_Su5zUoukMz5-WIQmdX/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => window.location.href = "/submit")
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>
